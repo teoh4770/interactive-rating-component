@@ -31,3 +31,9 @@ The designs were created to the following widths:
 
 - Family: [Overpass](https://fonts.google.com/specimen/Overpass)
 - Weights: 400, 700
+
+
+Basically when the user submit the score by clicking on the submit button
+detect whether the state has changed
+if yes, then hide the rating state section and show the thank you note section
+if no, then give a warning and do nothing

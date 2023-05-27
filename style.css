@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+  /* Typography */
+  --font-family: 'Overpass', sans-serif;
+  --base-font-size: 15px;
+  
+  /* Colors */
+  --grey-100: hsl(217, 12%, 63%);
+  --grey-200: hsl(216, 12%, 54%);
+  --blue-500: hsl(213, 19%, 18%);
+  --blue-700: hsl(216, 12%, 8%);
+  --secondary: hsl(25, 97%, 53%);
+  --white: hsl(0, 0%, 100%);
+
+}
+
+/*
+  Josh Comeau CSS Reset 
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.333;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  block-size: auto;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+button {
+  border: unset;
+}
+
+
+/* font setting */
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: normal;
+  font-family: var(--serif);
+  margin: 0;
+  margin-top: 1.618rem; /*  Golden ratio  */
+  margin-bottom: 1.333rem; /*  Perfect Fourth  */
+}
+
+p {
+  line-height: 1.618 !important;
+  margin: 0;
+  margin-bottom: 0.75rem;
+}
+
+button {
+  font-size: 0.875rem;
+  font-weight: medium;
+  letter-spacing: 1.25;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+
+/* utility class */
+.hidden {
+  display: none;
+}
+
+body {
+  /* Layout */
+  display: grid;
+  place-items: center;
+  /* Spacing */
+  
+  /* Typography */
+  font-size: 0.9375rem;
+  font-family: var(--font-family);
+  /* Colors */
+  background-color: var(--blue-700);
+  
+}
+
+
+.rating-card, 
+.thank-you-card {
+  /* Layout */
+  min-width: 326px;
+  max-width: 350px;
+  /* Spacing */
+  margin-inline: 1.375rem;
+  /* padding:  */
+  padding: 1.2rem;
+  padding-bottom: 1.875rem; 
+  /* Typography */
+  
+  
+  /* Colors */
+  background-color:#1f2630;
+  color: #89909a;
+  
+  /* Others */
+  border-radius: 1.25rem;
+  
+
+}
+
+.rating-card__icon-container{
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 50%;
+  background-color: #262f38;
+}
+
+.rating-card__icon{
+  width: 1rem;
+  aspect-ratio: 1;
+}
+
+.rating-card__h3,
+.thank-you-card__h3{
+  /* Spacing */
+  margin-bottom: unset;
+  
+  /* Typography */
+  font-size: 1.5rem;
+  font-weight: 700;
+  
+  /* Colors */
+  color: var(--white);
+}
+
+.rating-card__p{
+  margin-block-start: 1rem;
+  margin-block-end: 1.5rem;
+}
+
+.rating-card__buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1.5rem;
+}
+
+.rating-card__button{
+  /* Layout */
+  width: 45px;
+  aspect-ratio: 1;
+  /* Colors */
+  background-color: #262f38;
+  color: #818996;
+  /* Others */
+  border-radius: 50%;
+}
+
+
+.rating-card__button--submit{
+  /* Layout */
+  width: 100%;
+  /* Spacing */
+  padding-block: 0.75rem;
+  /* Typography */
+  letter-spacing: 2px;
+  /* Colors */
+  background-color: #fc7613;
+  color: var(--white);
+  /* Others */
+  border-radius: 1.5rem;
+  aspect-ratio: unset;
+}
+
+.rating-card__button:hover {
+  background-color: #818996;
+  color: var(--white);
+}
+
+.rating-card__button.active {
+  background-color: var(--secondary);
+  color: var(--white);
+}
+
+
+.rating-card__button--submit:hover{
+  background-color: var(--white);
+  color: var(--secondary);
+}
+
+.thank-you-card{
+  text-align: center;
+  padding: 1.75rem;
+  padding-bottom: 1.9rem;
+}
+
+.thank-you-card__img {
+  width: 150px;
+  margin-inline: auto;
+}
+
+.thank-you-card__chip{
+  margin-inline: auto;
+  margin-block-start: 1.5rem;
+
+}
+
+.chip{
+  width: fit-content;
+  display: flex;
+  padding-block-start: .6rem;
+  padding-block-end: .5rem;
+  padding-inline: .75rem;
+  border-radius: 1.5rem;
+  background-color: #262f38;
+  color: var(--secondary);
+}
+
+.thank-you-card__p{
+  margin-top: 18px;
+}
