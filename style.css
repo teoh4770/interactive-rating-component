@@ -10,8 +10,20 @@
   --grey-200: hsl(216, 12%, 54%);
   --blue-500: hsl(213, 19%, 18%);
   --blue-700: hsl(216, 12%, 8%);
-  --secondary: hsl(25, 97%, 53%);
+  
+  /* --card-bg: #1f2630;
+  --body-text-color: #89909a;
+  --body-bg: #121417;
+  --button-bg-color: #262f38;
   --white: hsl(0, 0%, 100%);
+  --secondary: hsl(25, 97%, 53%); */
+  
+  --card-bg: #161b23;
+  --body-text-color: #89909a;
+  --body-bg: #121417;
+  --button-bg-color: #262f38;
+  --white: hsl(0, 0%, 100%);
+  --secondary: hsl(25, 97%, 53%);
 
 }
 
@@ -28,6 +40,7 @@
 * {
   margin: 0;
   scroll-behavior: smooth;
+  
 
 }
 
@@ -123,7 +136,11 @@ body {
   font-size: 0.9375rem;
   font-family: var(--font-family);
   /* Colors */
-  background-color: var(--blue-700);
+  background-color: var(--body-bg);
+  color: var(--body-text-color);
+
+  /* extra */
+  filter: hue-rotate(225deg)
   
 }
 
@@ -138,12 +155,9 @@ body {
   /* padding:  */
   padding: 1.2rem;
   padding-bottom: 1.875rem; 
-  /* Typography */
-  
-  
   /* Colors */
-  background-color:#1f2630;
-  color: #89909a;
+  background-color: var(--card-bg); 
+  /* 	hsl(215, 8%, 57%) */
   
   /* Others */
   border-radius: 1.25rem;
@@ -155,7 +169,7 @@ body {
   padding: 1rem;
   width: fit-content;
   border-radius: 50%;
-  background-color: #262f38;
+  background-color: var(--button-bg-color);
 }
 
 .rating-card__icon{
@@ -194,11 +208,23 @@ body {
   width: 45px;
   aspect-ratio: 1;
   /* Colors */
-  background-color: #262f38;
-  color: #818996;
+  background-color: var(--button-bg-color);
+  color: var(--body-text-color);
   /* Others */
   border-radius: 50%;
+  opacity: 0; 
+  transition: opacity .5s ease-in;
 }
+
+.rating-card__button.flick {
+  opacity: 1;
+}
+
+
+
+
+
+
 
 
 .rating-card__button--submit{
@@ -209,11 +235,13 @@ body {
   /* Typography */
   letter-spacing: 2px;
   /* Colors */
-  background-color: #fc7613;
+  background-color: var(--secondary);
+  /* 	hsl(25, 97%, 53%) */
   color: var(--white);
   /* Others */
   border-radius: 1.5rem;
   aspect-ratio: unset;
+  opacity: 1;
 }
 
 .rating-card__button:hover {
@@ -236,6 +264,27 @@ body {
   text-align: center;
   padding: 1.75rem;
   padding-bottom: 1.9rem;
+  transition: transform 500ms ease-out;
+}
+
+.thank-you-card__h3 {
+  cursor: pointer;
+  transition: transform 500ms, color 500ms;
+  /* overflow: hidden; */
+}
+
+.thank-you-card__h3::before {
+  content: "Thank You!";
+  cursor: pointer;
+}
+
+.thank-you-card__h3:hover {
+  transform: translateY(5%);
+  color: var(--secondary);
+}
+
+.thank-you-card__h3:hover::before {
+  content: "Reset?";
 }
 
 .thank-you-card__img {
@@ -246,7 +295,6 @@ body {
 .thank-you-card__chip{
   margin-inline: auto;
   margin-block-start: 1.5rem;
-
 }
 
 .chip{
@@ -256,10 +304,22 @@ body {
   padding-block-end: .5rem;
   padding-inline: .75rem;
   border-radius: 1.5rem;
-  background-color: #262f38;
+  background-color: var(--button-bg-color);
   color: var(--secondary);
-}
+}  
 
 .thank-you-card__p{
   margin-top: 18px;
+}
+
+.spin {
+  animation: spin 10s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  } to {
+    transform: rotate(1turn);
+  }
 }
